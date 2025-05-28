@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li.active {
+            color: red;
+        }
+    </style>
+</head>
+<body x-data>
+
+<table x-grid border="1">
+  <thead>
+    <tr>
+      <th x-grid:col="name" x-grid:hide>Coluna 1</th>
+      <th x-grid:col="description">Coluna 2</th>
+      <th x-grid:col="price">Coluna 3</th>
+      <th x-grid:col="id">Coluna 4</th>
+      <th x-grid:col="id" x-grid:lock>Coluna 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr x-grid:row>
+      <td>Item 1</td>
+      <td>Item 2</td>
+      <td>Item 3</td>
+      <td>Item 4</td>
+      <td>Item 5</td>
+    </tr>
+  </tbody>
+</table>
+
+<script type="module" defer>
+  import Alpine from './js/alpine/alpine.js';
+  import datagrid from './js/alpine/datagrid.js';
+
+  Alpine.plugin(datagrid)
+  Alpine.start()
+</script>
+
+</body>
+</html>
